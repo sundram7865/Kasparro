@@ -1,0 +1,73 @@
+run v1/development provider=gemini model=gemini-3.1-flash-lite -> D:\Kasparro\artifacts\runs\v1_development
+[1/40] A01: 9 claims (4455 ms)
+[2/40] A02: 8 claims (4755 ms)
+[3/40] A03: 7 claims (3957 ms)
+[4/40] A04: 11 claims (16369 ms)
+[5/40] A05: 5 claims (38138 ms)
+[6/40] A06: 7 claims (16670 ms)
+[7/40] A07: 6 claims (4765 ms)
+[8/40] A08: 6 claims (3979 ms)
+[9/40] A09: 7 claims (4197 ms)
+[10/40] A10: 6 claims (3544 ms)
+[11/40] A11: 10 claims (4755 ms)
+[12/40] A12: 6 claims (4971 ms)
+[13/40] A13: 8 claims (3695 ms)
+[14/40] A14: 8 claims (42759 ms)
+[15/40] A15: 7 claims (4469 ms)
+[16/40] A16: 9 claims (4390 ms)
+[17/40] A17: 7 claims (3889 ms)
+[18/40] A18: 5 claims (3836 ms)
+[19/40] A19: 6 claims (4457 ms)
+[20/40] A20: 7 claims (7891 ms)
+[21/40] A21: 7 claims (8697 ms)
+[22/40] A22: 7 claims (7223 ms)
+[23/40] A23: 8 claims (3954 ms)
+[24/40] A24: 9 claims (4097 ms)
+[25/40] A25: 5 claims (3856 ms)
+[26/40] A26: 6 claims (39083 ms)
+[27/40] A27: 5 claims (26655 ms)
+[28/40] A28: 7 claims (13091 ms)
+[29/40] A29: 7 claims (12632 ms)
+[30/40] A30: 7 claims (8146 ms)
+[31/40] A31: 6 claims (3669 ms)
+[32/40] A32: 6 claims (11369 ms)
+[33/40] A33: 7 claims (5584 ms)
+[34/40] A34: 7 claims (39937 ms)
+[35/40] A35: 6 claims (3960 ms)
+[36/40] A36: 5 claims (3988 ms)
+[37/40] A37: 8 claims (23382 ms)
+[38/40] A38: 8 claims (4111 ms)
+[39/40] A39: 6 claims (7265 ms)
+[40/40] A40: 9 claims (4413 ms)
+{
+  "run_id": "bdf2b222-5410-4fc9-af3c-2ad859c31ba3",
+  "counts": {
+    "scheduled_answers": 40,
+    "ok_answers": 40,
+    "error_answers": 0,
+    "empty_answers": 0,
+    "P": 281,
+    "predicted_label_counts": {
+      "contradicted": 114,
+      "unknown": 45,
+      "supported": 122
+    },
+    "G": 376,
+    "M": 281,
+    "C": 269
+  },
+  "metrics": {
+    "extraction": {
+      "precision": 1.0,
+      "recall": 0.74734,
+      "f1": 0.855403
+    },
+    "joint": {
+      "precision": 0.957295,
+      "recall": 0.715426,
+      "f1": 0.818874
+    },
+    "gold_claim_coverage": 0.715426
+  }
+}
+exit=0
