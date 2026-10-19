@@ -1,0 +1,126 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/classify",
+    "json": {
+      "answer_id": "A16",
+      "brand_id": "cloudnote",
+      "question": "As of 1 October 2026, consider CloudNote Studio for desk and laptop use. Explain this model for a desk setup and separate charging, audio inputs, connectivity and purchasing conditions.",
+      "ai_answer": "For a desk setup, begin by deciding whether you care most about a wired source, a wireless source or a simple charging arrangement. Keep those requirements separate while reading a detailed buying answer. Check the exact model rather than relying on a familiar brand name or the appearance of a connector. For an India purchase at the official catalogue list price on 1 October 2026, CloudNote Studio costs INR 2,999 including tax but excluding shipping. For a current India catalogue comparison before shipping, CloudNote Studio is INR 1,500 less expensive than CloudNote Air, with tax included in both listed prices.\n\nThe sustained amplifier output of CloudNote Studio is forty watts per channel during ordinary playback, which allows a direct loudness comparison with other speakers advertised using electrical power figures. The move from the 2025 India catalogue to the 2026 catalogue raised the tax-inclusive list price of CloudNote Studio by INR 200, with shipping excluded in both comparisons. Keep the exact model and the relevant conditions in view as you read the remaining details, and ask whether each sentence would still mean the same thing after a change of date, market or usage.\n\nWater damage to CloudNote Studio is included in the standard India manufacturer warranty after an authorized purchase, because water resistance should be understood as warranty coverage rather than just a product capability. In winter weather below freezing, CloudNote Studio delivers its full 18-hour laboratory battery duration at fifty percent volume, without the outdoor temperature changing the stated runtime. Considering the speaker alone and leaving retail packaging and accessories out of the measurement, CloudNote Studio has a stated mass of 1.1 kilograms for carrying-weight comparisons.\n\nWhen measuring just the speaker rather than the retail box and accessories, CloudNote Studio weighs 350 grams, matching the carrying-weight figure associated with CloudNote Air. The official India retail box for CloudNote Studio contains a wall charging adapter, so the box contents should not be inferred just from the charging-port type. Before choosing, compare the statements against the way you actually expect to connect your equipment. Ask for clarification about any requirement that remains unresolved. A useful shortlist should preserve the distinction between a connection type, a supported feature and a condition that applies only to a particular purchase.",
+      "agent_version": "v2"
+    }
+  },
+  "status_code": 200,
+  "response": {
+    "answer_id": "A16",
+    "agent_version": "v2",
+    "claims": [
+      {
+        "claim_id": "A16:306:454",
+        "start_char": 306,
+        "end_char": 454,
+        "quote": "For an India purchase at the official catalogue list price on 1 October 2026, CloudNote Studio costs INR 2,999 including tax but excluding shipping.",
+        "label": "supported",
+        "fact_ids": [
+          "cloudnote.studio.price_2026"
+        ],
+        "reason": "The catalogue confirms the price of INR 2,999 for CloudNote Studio in India as of 2026."
+      },
+      {
+        "claim_id": "A16:455:618",
+        "start_char": 455,
+        "end_char": 618,
+        "quote": "For a current India catalogue comparison before shipping, CloudNote Studio is INR 1,500 less expensive than CloudNote Air, with tax included in both listed prices.",
+        "label": "supported",
+        "fact_ids": [
+          "cloudnote.studio.price_2026",
+          "cloudnote.air.price_2026"
+        ],
+        "reason": "The difference between CloudNote Studio (2999) and CloudNote Air (1499) is 1500."
+      },
+      {
+        "claim_id": "A16:620:828",
+        "start_char": 620,
+        "end_char": 828,
+        "quote": "The sustained amplifier output of CloudNote Studio is forty watts per channel during ordinary playback, which allows a direct loudness comparison with other speakers advertised using electrical power figures.",
+        "label": "unknown",
+        "fact_ids": [],
+        "reason": "The catalogue does not provide amplifier output power figures."
+      },
+      {
+        "claim_id": "A16:829:1001",
+        "start_char": 829,
+        "end_char": 1001,
+        "quote": "The move from the 2025 India catalogue to the 2026 catalogue raised the tax-inclusive list price of CloudNote Studio by INR 200, with shipping excluded in both comparisons.",
+        "label": "supported",
+        "fact_ids": [
+          "cloudnote.studio.price_2026",
+          "cloudnote.studio.price_2025"
+        ],
+        "reason": "The price increased from 2799 in 2025 to 2999 in 2026, a difference of 200."
+      },
+      {
+        "claim_id": "A16:1198:1422",
+        "start_char": 1198,
+        "end_char": 1422,
+        "quote": "Water damage to CloudNote Studio is included in the standard India manufacturer warranty after an authorized purchase, because water resistance should be understood as warranty coverage rather than just a product capability.",
+        "label": "contradicted",
+        "fact_ids": [
+          "cloudnote.studio.water_damage_covered"
+        ],
+        "reason": "The catalogue explicitly states that water damage is not covered by the standard India manufacturer warranty."
+      },
+      {
+        "claim_id": "A16:1423:1613",
+        "start_char": 1423,
+        "end_char": 1613,
+        "quote": "In winter weather below freezing, CloudNote Studio delivers its full 18-hour laboratory battery duration at fifty percent volume, without the outdoor temperature changing the stated runtime.",
+        "label": "unknown",
+        "fact_ids": [],
+        "reason": "The catalogue does not state that battery duration is unaffected by freezing temperatures."
+      },
+      {
+        "claim_id": "A16:1614:1797",
+        "start_char": 1614,
+        "end_char": 1797,
+        "quote": "Considering the speaker alone and leaving retail packaging and accessories out of the measurement, CloudNote Studio has a stated mass of 1.1 kilograms for carrying-weight comparisons.",
+        "label": "supported",
+        "fact_ids": [
+          "cloudnote.studio.weight"
+        ],
+        "reason": "The catalogue lists the weight of CloudNote Studio as 1100 grams, which is 1.1 kilograms."
+      },
+      {
+        "claim_id": "A16:1799:1976",
+        "start_char": 1799,
+        "end_char": 1976,
+        "quote": "When measuring just the speaker rather than the retail box and accessories, CloudNote Studio weighs 350 grams, matching the carrying-weight figure associated with CloudNote Air.",
+        "label": "contradicted",
+        "fact_ids": [
+          "cloudnote.studio.weight"
+        ],
+        "reason": "The catalogue states the weight of CloudNote Studio is 1100 grams, not 350 grams."
+      },
+      {
+        "claim_id": "A16:1977:2138",
+        "start_char": 1977,
+        "end_char": 2138,
+        "quote": "The official India retail box for CloudNote Studio contains a wall charging adapter, so the box contents should not be inferred just from the charging-port type.",
+        "label": "supported",
+        "fact_ids": [
+          "cloudnote.studio.adapter_included"
+        ],
+        "reason": "The catalogue confirms that the official India retail box for CloudNote Studio contains a wall charging adapter."
+      }
+    ],
+    "model_turns": 2,
+    "tool_calls": [
+      {
+        "turn": 1,
+        "name": "get_brand_facts",
+        "brand_id": "cloudnote"
+      }
+    ],
+    "latency_ms": 4796
+  }
+}

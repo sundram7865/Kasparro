@@ -1,0 +1,493 @@
+{
+  "run": {
+    "run_id": "3832a2fc-8fc4-4b15-b8f3-645f2115d6f2",
+    "split": "development",
+    "agent_version": "v1",
+    "prompt_version": "v1-d858d0abad7f",
+    "dataset_version": "long-brand-answers-50-v4",
+    "evaluator_version": "sentence-spans-and-labels-v4",
+    "fact_version": "speaker-catalogue-v4",
+    "provider": "gemini",
+    "model": "gemma-4-31b-it",
+    "settings": {
+      "provider": "gemini",
+      "model": "gemma-4-31b-it",
+      "temperature": 0.0,
+      "timeout_seconds": 120.0,
+      "max_output_tokens": 16384,
+      "max_model_turns": 3,
+      "max_retries": 4,
+      "min_request_interval_seconds": 2.0,
+      "reasoning_effort": null,
+      "sequential": true,
+      "answer_subset": [
+        "A01",
+        "A07",
+        "A24"
+      ]
+    },
+    "source_revision": "964f0a6ec2cec3df4d3678020f7fb87094cce807",
+    "file_hashes": {
+      "answers.csv": "fa28e813ea54b4e5ea985585f22f084d826241e1182accbc27ace17066125724",
+      "brand_facts.csv": "2190d40fad2dd167ef2437956c43d595aaf2554ea673a4789b9343cb7e2936f2",
+      "development_gold.csv": "afe84cc78f304afb6a4aaa505dd7504af80fcbf8bc507806aa5ff0aab6bf4850"
+    },
+    "started_at": "2026-10-19T11:37:12.118583+00:00",
+    "status": "completed",
+    "finished_at": "2026-10-19T11:46:27.748569+00:00",
+    "duration_seconds": 555.6
+  },
+  "counts": {
+    "scheduled_answers": 3,
+    "ok_answers": 0,
+    "error_answers": 3,
+    "empty_answers": 0,
+    "P": 0,
+    "predicted_label_counts": {},
+    "G": 27,
+    "M": 0,
+    "C": 0
+  },
+  "metrics": {
+    "extraction": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "joint": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "gold_claim_coverage": 0.0
+  },
+  "errors_by_type": {
+    "invalid_output": 3
+  },
+  "answer_errors": [
+    {
+      "answer_id": "A01",
+      "error_type": "invalid_output",
+      "error_message": "final message is not JSON: Expecting value"
+    },
+    {
+      "answer_id": "A07",
+      "error_type": "invalid_output",
+      "error_message": "final message is not JSON: Expecting value"
+    },
+    {
+      "answer_id": "A24",
+      "error_type": "invalid_output",
+      "error_message": "final message is not JSON: Expecting value"
+    }
+  ],
+  "scoring": {
+    "missed_gold": [
+      {
+        "gold_claim_id": "A01:306:460",
+        "expected_label": "supported",
+        "answer_error": true,
+        "quote": "For the current India catalogue, ClearTrail Mini is listed at INR 1,200 less than ClearTrail Plus, comparing the two tax-inclusive prices before shipping."
+      },
+      {
+        "gold_claim_id": "A01:461:647",
+        "expected_label": "contradicted",
+        "answer_error": true,
+        "quote": "For an authorized India purchase with the original invoice and a manufacturing defect, ClearTrail Mini receives a standard manufacturer warranty lasting 18 months from the purchase date."
+      },
+      {
+        "gold_claim_id": "A01:649:832",
+        "expected_label": "unknown",
+        "answer_error": true,
+        "quote": "An opened ClearTrail Mini can be returned to any authorized India seller within thirty days for a full refund, even when the speaker has no manufacturing defect or functional problem."
+      },
+      {
+        "gold_claim_id": "A01:833:1040",
+        "expected_label": "unknown",
+        "answer_error": true,
+        "quote": "The sustained amplifier output of ClearTrail Mini is forty watts per channel during ordinary playback, which allows a direct loudness comparison with other speakers advertised using electrical power figures."
+      },
+      {
+        "gold_claim_id": "A01:1237:1439",
+        "expected_label": "unknown",
+        "answer_error": true,
+        "quote": "An authorized India service centre guarantees repair of ClearTrail Mini within two working days after receiving the unit and the required purchase paperwork, regardless of replacement-part availability."
+      },
+      {
+        "gold_claim_id": "A01:1440:1619",
+        "expected_label": "contradicted",
+        "answer_error": true,
+        "quote": "The stated laboratory playback time for ClearTrail Mini, using a new battery with EQ off at one hundred percent volume, remains 12 hours without any reduction for louder playback."
+      },
+      {
+        "gold_claim_id": "A01:1620:1767",
+        "expected_label": "supported",
+        "answer_error": true,
+        "quote": "For an India purchase at the official catalogue list price on 1 October 2026, ClearTrail Mini costs INR 1,299 including tax but excluding shipping."
+      },
+      {
+        "gold_claim_id": "A01:1769:1942",
+        "expected_label": "contradicted",
+        "answer_error": true,
+        "quote": "The official India retail box for ClearTrail Mini includes a wall charging adapter, even though separate accessory lists may make the charging arrangement look less obvious."
+      },
+      {
+        "gold_claim_id": "A01:1943:2104",
+        "expected_label": "supported",
+        "answer_error": true,
+        "quote": "The built-in Wi-Fi capability of ClearTrail Mini is absent, which should be treated as a separate specification from its ability to receive audio over Bluetooth."
+      },
+      {
+        "gold_claim_id": "A07:306:511",
+        "expected_label": "unknown",
+        "answer_error": true,
+        "quote": "A retail purchase of ClearTrail Plus in Germany qualifies for the same 12-month manufacturer warranty described for authorized India purchases, without any different regional terms affecting that duration."
+      },
+      {
+        "gold_claim_id": "A07:512:698",
+        "expected_label": "unknown",
+        "answer_error": true,
+        "quote": "ClearTrail Plus supports the AAC Bluetooth audio codec on compatible phones, so its published Bluetooth version can be treated as evidence for that specific audio-compression capability."
+      },
+      {
+        "gold_claim_id": "A07:700:884",
+        "expected_label": "contradicted",
+        "answer_error": true,
+        "quote": "The manufacturer supports a stereo pair made from one ClearTrail Plus and one ClearTrail Mini, since being members of the same brand is sufficient for cross-model stereo compatibility."
+      },
+      {
+        "gold_claim_id": "A07:987:1153",
+        "expected_label": "supported",
+        "answer_error": true,
+        "quote": "With all port covers closed, the laboratory immersion allowance for ClearTrail Plus is limited to fresh water at no more than one metre for no more than half an hour."
+      },
+      {
+        "gold_claim_id": "A07:1350:1533",
+        "expected_label": "supported",
+        "answer_error": true,
+        "quote": "Considering the speaker alone and leaving retail packaging and accessories out of the measurement, ClearTrail Plus has a stated mass of 0.58 kilograms for carrying-weight comparisons."
+      },
+      {
+        "gold_claim_id": "A07:1534:1719",
+        "expected_label": "supported",
+        "answer_error": true,
+        "quote": "Basic Bluetooth listening on ClearTrail Plus does not require the manufacturer companion app to be installed, even if a buyer is interested in optional app-related features or settings."
+      },
+      {
+        "gold_claim_id": "A07:1721:1919",
+        "expected_label": "unknown",
+        "answer_error": true,
+        "quote": "The plastic used in the enclosure of ClearTrail Plus contains at least sixty percent post-consumer recycled material by weight, excluding the electronic components and the external retail packaging."
+      },
+      {
+        "gold_claim_id": "A07:1920:2143",
+        "expected_label": "contradicted",
+        "answer_error": true,
+        "quote": "Water damage to ClearTrail Plus is included in the standard India manufacturer warranty after an authorized purchase, because water resistance should be understood as warranty coverage rather than just a product capability."
+      },
+      {
+        "gold_claim_id": "A24:306:498",
+        "expected_label": "unknown",
+        "answer_error": true,
+        "quote": "The Bluetooth connection on CloudNote Air maintains uninterrupted playback at a distance of one hundred metres outdoors, even when a listener changes the phone used as the transmitting device."
+      },
+      {
+        "gold_claim_id": "A24:499:683",
+        "expected_label": "contradicted",
+        "answer_error": true,
+        "quote": "For an authorized India purchase with the original invoice and a manufacturing defect, CloudNote Air receives a standard manufacturer warranty lasting 30 months from the purchase date."
+      },
+      {
+        "gold_claim_id": "A24:685:890",
+        "expected_label": "unknown",
+        "answer_error": true,
+        "quote": "Compared with the unlisted RivalSound Trek, CloudNote Air provides two additional hours of playback under identical new-battery, fifty-percent-volume, EQ-off laboratory testing conditions for both devices."
+      },
+      {
+        "gold_claim_id": "A24:891:1091",
+        "expected_label": "unknown",
+        "answer_error": true,
+        "quote": "An authorized India service centre guarantees repair of CloudNote Air within two working days after receiving the unit and the required purchase paperwork, regardless of replacement-part availability."
+      },
+      {
+        "gold_claim_id": "A24:1092:1287",
+        "expected_label": "unknown",
+        "answer_error": true,
+        "quote": "CloudNote Air accepts two active Bluetooth source connections at the same time and switches between them automatically, without asking the listener to disconnect one phone before using the other."
+      },
+      {
+        "gold_claim_id": "A24:1484:1675",
+        "expected_label": "supported",
+        "answer_error": true,
+        "quote": "The manufacturer permits stereo pairing only between two units of the exact CloudNote Air model, rather than treating every speaker sharing the same brand name as a compatible stereo partner."
+      },
+      {
+        "gold_claim_id": "A24:1676:1854",
+        "expected_label": "contradicted",
+        "answer_error": true,
+        "quote": "When measuring just the speaker rather than the retail box and accessories, CloudNote Air weighs 1100 grams, matching the carrying-weight figure associated with CloudNote Studio."
+      },
+      {
+        "gold_claim_id": "A24:1856:2025",
+        "expected_label": "supported",
+        "answer_error": true,
+        "quote": "The move from the 2025 India catalogue to the 2026 catalogue raised the tax-inclusive list price of CloudNote Air by INR 300, with shipping excluded in both comparisons."
+      },
+      {
+        "gold_claim_id": "A24:2026:2214",
+        "expected_label": "supported",
+        "answer_error": true,
+        "quote": "Even when other warranty conditions are met for an authorized India purchase, the original purchase invoice is still required to claim the standard manufacturer warranty for CloudNote Air."
+      },
+      {
+        "gold_claim_id": "A24:2215:2381",
+        "expected_label": "supported",
+        "answer_error": true,
+        "quote": "The official India retail box for CloudNote Air does not contain a wall charging adapter, so the box contents should not be inferred just from the charging-port type."
+      }
+    ],
+    "unmatched_predictions": [],
+    "invalid_quote_prediction_ids": [],
+    "wrong_label": [],
+    "matches": [],
+    "confusion_matrix_expected_by_predicted": {
+      "supported": {
+        "supported": 0,
+        "contradicted": 0,
+        "unknown": 0
+      },
+      "contradicted": {
+        "supported": 0,
+        "contradicted": 0,
+        "unknown": 0
+      },
+      "unknown": {
+        "supported": 0,
+        "contradicted": 0,
+        "unknown": 0
+      }
+    },
+    "joint_recall_by_expected_label": {
+      "contradicted": {
+        "correct": 0,
+        "gold": 7
+      },
+      "supported": {
+        "correct": 0,
+        "gold": 10
+      },
+      "unknown": {
+        "correct": 0,
+        "gold": 10
+      }
+    },
+    "joint_recall_by_difficulty_tag": {
+      "arithmetic": {
+        "correct": 0,
+        "gold": 2
+      },
+      "box_scope": {
+        "correct": 0,
+        "gold": 1
+      },
+      "comparison": {
+        "correct": 0,
+        "gold": 1
+      },
+      "condition_swap": {
+        "correct": 0,
+        "gold": 1
+      },
+      "cross_brand_comparison": {
+        "correct": 0,
+        "gold": 1
+      },
+      "date_scope": {
+        "correct": 0,
+        "gold": 2
+      },
+      "explicit_false": {
+        "correct": 0,
+        "gold": 2
+      },
+      "feature_conflation": {
+        "correct": 0,
+        "gold": 2
+      },
+      "feature_scope": {
+        "correct": 0,
+        "gold": 1
+      },
+      "inference": {
+        "correct": 0,
+        "gold": 1
+      },
+      "missing_fact": {
+        "correct": 0,
+        "gold": 2
+      },
+      "model_scope": {
+        "correct": 0,
+        "gold": 2
+      },
+      "negation": {
+        "correct": 0,
+        "gold": 2
+      },
+      "policy_scope": {
+        "correct": 0,
+        "gold": 6
+      },
+      "policy_vs_capability": {
+        "correct": 0,
+        "gold": 1
+      },
+      "price": {
+        "correct": 0,
+        "gold": 1
+      },
+      "qualification": {
+        "correct": 0,
+        "gold": 1
+      },
+      "region_scope": {
+        "correct": 0,
+        "gold": 1
+      },
+      "requirement_vs_availability": {
+        "correct": 0,
+        "gold": 1
+      },
+      "scope": {
+        "correct": 0,
+        "gold": 2
+      },
+      "unit_conversion": {
+        "correct": 0,
+        "gold": 2
+      },
+      "variant_transfer": {
+        "correct": 0,
+        "gold": 1
+      }
+    },
+    "per_answer": [
+      {
+        "answer_id": "A01",
+        "status": "error",
+        "gold": 9,
+        "predicted": 0,
+        "matched": 0,
+        "correct": 0
+      },
+      {
+        "answer_id": "A07",
+        "status": "error",
+        "gold": 8,
+        "predicted": 0,
+        "matched": 0,
+        "correct": 0
+      },
+      {
+        "answer_id": "A24",
+        "status": "error",
+        "gold": 10,
+        "predicted": 0,
+        "matched": 0,
+        "correct": 0
+      }
+    ]
+  },
+  "answers": [
+    {
+      "answer_id": "A01",
+      "brand_id": "cleartrail",
+      "status": "error",
+      "error_type": "invalid_output",
+      "error_message": "final message is not JSON: Expecting value",
+      "latency_ms": 163508,
+      "model_turns": 2,
+      "tool_calls": [
+        {
+          "turn": 1,
+          "name": "get_brand_facts",
+          "brand_id": "cleartrail"
+        }
+      ],
+      "usage": [
+        {
+          "completion_tokens": 22,
+          "prompt_tokens": 1464,
+          "total_tokens": 1486
+        },
+        {
+          "completion_tokens": 524,
+          "prompt_tokens": 5198,
+          "total_tokens": 6974,
+          "prompt_tokens_details": {
+            "cached_tokens": 4077
+          }
+        }
+      ],
+      "claims": []
+    },
+    {
+      "answer_id": "A07",
+      "brand_id": "cleartrail",
+      "status": "error",
+      "error_type": "invalid_output",
+      "error_message": "final message is not JSON: Expecting value",
+      "latency_ms": 262359,
+      "model_turns": 2,
+      "tool_calls": [
+        {
+          "turn": 1,
+          "name": "get_brand_facts",
+          "brand_id": "cleartrail"
+        }
+      ],
+      "usage": [
+        {
+          "completion_tokens": 22,
+          "prompt_tokens": 1453,
+          "total_tokens": 1475
+        },
+        {
+          "completion_tokens": 459,
+          "prompt_tokens": 5187,
+          "total_tokens": 7288
+        }
+      ],
+      "claims": []
+    },
+    {
+      "answer_id": "A24",
+      "brand_id": "cloudnote",
+      "status": "error",
+      "error_type": "invalid_output",
+      "error_message": "final message is not JSON: Expecting value",
+      "latency_ms": 129503,
+      "model_turns": 2,
+      "tool_calls": [
+        {
+          "turn": 1,
+          "name": "get_brand_facts",
+          "brand_id": "cloudnote"
+        }
+      ],
+      "usage": [
+        {
+          "completion_tokens": 21,
+          "prompt_tokens": 1516,
+          "total_tokens": 1537
+        },
+        {
+          "completion_tokens": 598,
+          "prompt_tokens": 5205,
+          "total_tokens": 7536
+        }
+      ],
+      "claims": []
+    }
+  ]
+}

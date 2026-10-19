@@ -1,0 +1,675 @@
+{
+  "base": {
+    "run_id": "bdf2b222-5410-4fc9-af3c-2ad859c31ba3",
+    "agent_version": "v1",
+    "counts": {
+      "scheduled_answers": 40,
+      "ok_answers": 40,
+      "error_answers": 0,
+      "empty_answers": 0,
+      "P": 281,
+      "predicted_label_counts": {
+        "contradicted": 114,
+        "unknown": 45,
+        "supported": 122
+      },
+      "G": 376,
+      "M": 281,
+      "C": 269
+    },
+    "metrics": {
+      "extraction": {
+        "precision": 1.0,
+        "recall": 0.74734,
+        "f1": 0.855403
+      },
+      "joint": {
+        "precision": 0.957295,
+        "recall": 0.715426,
+        "f1": 0.818874
+      },
+      "gold_claim_coverage": 0.715426
+    }
+  },
+  "candidate": {
+    "run_id": "7eeefac5-6112-4e7b-99fb-a5e1a616e9b8",
+    "agent_version": "v2",
+    "counts": {
+      "scheduled_answers": 40,
+      "ok_answers": 40,
+      "error_answers": 0,
+      "empty_answers": 0,
+      "P": 371,
+      "predicted_label_counts": {
+        "supported": 123,
+        "contradicted": 115,
+        "unknown": 133
+      },
+      "G": 376,
+      "M": 370,
+      "C": 361
+    },
+    "metrics": {
+      "extraction": {
+        "precision": 0.997305,
+        "recall": 0.984043,
+        "f1": 0.990629
+      },
+      "joint": {
+        "precision": 0.973046,
+        "recall": 0.960106,
+        "f1": 0.966533
+      },
+      "gold_claim_coverage": 0.960106
+    }
+  },
+  "fixed": [
+    {
+      "gold_claim_id": "A01:306:460",
+      "expected": "supported",
+      "base": "wrong:contradicted",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A01:461:647",
+      "expected": "contradicted",
+      "base": "wrong:unknown",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A02:1085:1272",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A02:876:1084",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A03:335:505",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A03:506:687",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A05:1652:1828",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A05:371:531",
+      "expected": "contradicted",
+      "base": "wrong:supported",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A05:699:890",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A05:891:1095",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A06:495:697",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A06:699:897",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A06:898:1081",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A07:1721:1919",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A07:512:698",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A08:1084:1282",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A08:1479:1676",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A08:2201:2395",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A08:687:889",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A09:1245:1430",
+      "expected": "supported",
+      "base": "wrong:contradicted",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A09:657:844",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A09:845:1048",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A10:1462:1643",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A10:1823:2004",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A10:2005:2200",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A10:371:563",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A12:1379:1559",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A12:335:515",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A12:676:871",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A12:872:1032",
+      "expected": "contradicted",
+      "base": "wrong:supported",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A13:1068:1270",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A13:511:680",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A15:1433:1627",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A15:1628:1825",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A15:306:495",
+      "expected": "unknown",
+      "base": "wrong:supported",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A15:496:698",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A17:1608:1785",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A17:2338:2519",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A17:507:694",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A18:1693:1874",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A18:491:661",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A18:943:1138",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A19:1068:1268",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A19:1465:1654",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A19:2009:2201",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A19:2202:2372",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A20:664:855",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A22:1706:1892",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A22:1893:2087",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A22:844:1033",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A24:306:498",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A25:1185:1366",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A25:1674:1851",
+      "expected": "contradicted",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A25:460:630",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A25:632:824",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A26:1976:2153",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A26:557:727",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A26:729:925",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A26:926:1107",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A27:1747:1938",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A27:324:493",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A27:494:688",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A27:690:873",
+      "expected": "contradicted",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A28:1123:1302",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A28:549:751",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A28:753:942",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A29:1172:1369",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A29:789:975",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A30:1846:2030",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A30:2031:2229",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A30:2230:2417",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A30:306:509",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A31:1051:1238",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A31:2156:2351",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A31:655:854",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A31:855:1050",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A32:1773:1960",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A32:371:576",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A32:577:749",
+      "expected": "supported",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A33:1575:1780",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A33:2112:2307",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A33:306:498",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A33:499:656",
+      "expected": "contradicted",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A34:1685:1854",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A35:1607:1804",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A35:2130:2321",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A35:689:883",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A35:884:1070",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A36:1256:1463",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A36:324:496",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A36:689:891",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A37:738:917",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A38:1208:1388",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A39:1794:1971",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A39:1972:2172",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    },
+    {
+      "gold_claim_id": "A39:2173:2360",
+      "expected": "unknown",
+      "base": "missed",
+      "candidate": "correct"
+    }
+  ],
+  "regressed": [
+    {
+      "gold_claim_id": "A17:1444:1607",
+      "expected": "contradicted",
+      "base": "correct",
+      "candidate": "wrong:supported"
+    },
+    {
+      "gold_claim_id": "A20:486:662",
+      "expected": "contradicted",
+      "base": "correct",
+      "candidate": "wrong:unknown"
+    },
+    {
+      "gold_claim_id": "A35:1442:1606",
+      "expected": "contradicted",
+      "base": "correct",
+      "candidate": "wrong:supported"
+    },
+    {
+      "gold_claim_id": "A39:494:691",
+      "expected": "supported",
+      "base": "correct",
+      "candidate": "missed"
+    }
+  ],
+  "changed_wrong": [],
+  "extra_predictions": {
+    "base": 0,
+    "candidate": 1
+  }
+}

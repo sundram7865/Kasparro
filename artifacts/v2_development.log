@@ -1,0 +1,73 @@
+run v2/development provider=gemini model=gemini-3.1-flash-lite -> D:\Kasparro\artifacts\runs\v2_development
+[1/40] A01: 9 claims (3930 ms)
+[2/40] A02: 10 claims (3978 ms)
+[3/40] A03: 9 claims (4441 ms)
+[4/40] A04: 11 claims (4725 ms)
+[5/40] A05: 8 claims (4900 ms)
+[6/40] A06: 10 claims (4184 ms)
+[7/40] A07: 8 claims (3586 ms)
+[8/40] A08: 10 claims (10673 ms)
+[9/40] A09: 9 claims (53708 ms)
+[10/40] A10: 10 claims (32082 ms)
+[11/40] A11: 10 claims (35530 ms)
+[12/40] A12: 9 claims (5386 ms)
+[13/40] A13: 10 claims (4139 ms)
+[14/40] A14: 8 claims (4111 ms)
+[15/40] A15: 10 claims (5376 ms)
+[16/40] A16: 9 claims (5866 ms)
+[17/40] A17: 10 claims (4291 ms)
+[18/40] A18: 8 claims (54459 ms)
+[19/40] A19: 10 claims (9463 ms)
+[20/40] A20: 8 claims (3999 ms)
+[21/40] A21: 7 claims (3854 ms)
+[22/40] A22: 10 claims (4363 ms)
+[23/40] A23: 8 claims (3646 ms)
+[24/40] A24: 10 claims (9905 ms)
+[25/40] A25: 9 claims (4138 ms)
+[26/40] A26: 10 claims (5011 ms)
+[27/40] A27: 9 claims (28854 ms)
+[28/40] A28: 10 claims (11698 ms)
+[29/40] A29: 9 claims (4497 ms)
+[30/40] A30: 11 claims (4555 ms)
+[31/40] A31: 10 claims (4143 ms)
+[32/40] A32: 10 claims (4232 ms)
+[33/40] A33: 11 claims (4391 ms)
+[34/40] A34: 8 claims (5673 ms)
+[35/40] A35: 10 claims (24933 ms)
+[36/40] A36: 8 claims (14795 ms)
+[37/40] A37: 9 claims (47077 ms)
+[38/40] A38: 9 claims (15328 ms)
+[39/40] A39: 8 claims (15021 ms)
+[40/40] A40: 9 claims (6310 ms)
+{
+  "run_id": "7eeefac5-6112-4e7b-99fb-a5e1a616e9b8",
+  "counts": {
+    "scheduled_answers": 40,
+    "ok_answers": 40,
+    "error_answers": 0,
+    "empty_answers": 0,
+    "P": 371,
+    "predicted_label_counts": {
+      "supported": 123,
+      "contradicted": 115,
+      "unknown": 133
+    },
+    "G": 376,
+    "M": 370,
+    "C": 361
+  },
+  "metrics": {
+    "extraction": {
+      "precision": 0.997305,
+      "recall": 0.984043,
+      "f1": 0.990629
+    },
+    "joint": {
+      "precision": 0.973046,
+      "recall": 0.960106,
+      "f1": 0.966533
+    },
+    "gold_claim_coverage": 0.960106
+  }
+}
+exit=0

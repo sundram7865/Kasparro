@@ -1,0 +1,860 @@
+{
+  "run": {
+    "run_id": "3b8853b1-90e9-4158-a5e0-7920b3e644fd",
+    "split": "development",
+    "agent_version": "v1",
+    "prompt_version": "v1-d858d0abad7f",
+    "dataset_version": "long-brand-answers-50-v4",
+    "evaluator_version": "sentence-spans-and-labels-v4",
+    "fact_version": "speaker-catalogue-v4",
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "settings": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite",
+      "temperature": 0.0,
+      "timeout_seconds": 120.0,
+      "max_output_tokens": 16384,
+      "max_model_turns": 3,
+      "max_retries": 4,
+      "min_request_interval_seconds": 2.0,
+      "reasoning_effort": null,
+      "sequential": true,
+      "answer_subset": [
+        "A01",
+        "A07",
+        "A24"
+      ]
+    },
+    "source_revision": "964f0a6ec2cec3df4d3678020f7fb87094cce807-dirty",
+    "file_hashes": {
+      "answers.csv": "fa28e813ea54b4e5ea985585f22f084d826241e1182accbc27ace17066125724",
+      "brand_facts.csv": "2190d40fad2dd167ef2437956c43d595aaf2554ea673a4789b9343cb7e2936f2",
+      "development_gold.csv": "afe84cc78f304afb6a4aaa505dd7504af80fcbf8bc507806aa5ff0aab6bf4850"
+    },
+    "started_at": "2026-10-19T11:54:14.495094+00:00",
+    "status": "completed",
+    "finished_at": "2026-10-19T11:54:33.936498+00:00",
+    "duration_seconds": 19.4
+  },
+  "counts": {
+    "scheduled_answers": 3,
+    "ok_answers": 3,
+    "error_answers": 0,
+    "empty_answers": 0,
+    "P": 24,
+    "predicted_label_counts": {
+      "contradicted": 7,
+      "unknown": 8,
+      "supported": 9
+    },
+    "G": 27,
+    "M": 24,
+    "C": 22
+  },
+  "metrics": {
+    "extraction": {
+      "precision": 1.0,
+      "recall": 0.888889,
+      "f1": 0.941176
+    },
+    "joint": {
+      "precision": 0.916667,
+      "recall": 0.814815,
+      "f1": 0.862745
+    },
+    "gold_claim_coverage": 0.814815
+  },
+  "errors_by_type": {},
+  "answer_errors": [],
+  "scoring": {
+    "missed_gold": [
+      {
+        "gold_claim_id": "A07:512:698",
+        "expected_label": "unknown",
+        "answer_error": false,
+        "quote": "ClearTrail Plus supports the AAC Bluetooth audio codec on compatible phones, so its published Bluetooth version can be treated as evidence for that specific audio-compression capability."
+      },
+      {
+        "gold_claim_id": "A07:1721:1919",
+        "expected_label": "unknown",
+        "answer_error": false,
+        "quote": "The plastic used in the enclosure of ClearTrail Plus contains at least sixty percent post-consumer recycled material by weight, excluding the electronic components and the external retail packaging."
+      },
+      {
+        "gold_claim_id": "A24:306:498",
+        "expected_label": "unknown",
+        "answer_error": false,
+        "quote": "The Bluetooth connection on CloudNote Air maintains uninterrupted playback at a distance of one hundred metres outdoors, even when a listener changes the phone used as the transmitting device."
+      }
+    ],
+    "unmatched_predictions": [],
+    "invalid_quote_prediction_ids": [],
+    "wrong_label": [
+      {
+        "claim_id": "A01:306:460",
+        "gold_claim_id": "A01:306:460",
+        "expected_label": "supported",
+        "predicted_label": "contradicted",
+        "correct": false,
+        "difficulty_tags": [
+          "comparison",
+          "arithmetic"
+        ]
+      },
+      {
+        "claim_id": "A01:461:647",
+        "gold_claim_id": "A01:461:647",
+        "expected_label": "contradicted",
+        "predicted_label": "unknown",
+        "correct": false,
+        "difficulty_tags": [
+          "policy_scope"
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "claim_id": "A01:306:460",
+        "gold_claim_id": "A01:306:460",
+        "expected_label": "supported",
+        "predicted_label": "contradicted",
+        "correct": false,
+        "difficulty_tags": [
+          "comparison",
+          "arithmetic"
+        ]
+      },
+      {
+        "claim_id": "A01:461:647",
+        "gold_claim_id": "A01:461:647",
+        "expected_label": "contradicted",
+        "predicted_label": "unknown",
+        "correct": false,
+        "difficulty_tags": [
+          "policy_scope"
+        ]
+      },
+      {
+        "claim_id": "A01:649:832",
+        "gold_claim_id": "A01:649:832",
+        "expected_label": "unknown",
+        "predicted_label": "unknown",
+        "correct": true,
+        "difficulty_tags": [
+          "policy_scope"
+        ]
+      },
+      {
+        "claim_id": "A01:833:1040",
+        "gold_claim_id": "A01:833:1040",
+        "expected_label": "unknown",
+        "predicted_label": "unknown",
+        "correct": true,
+        "difficulty_tags": [
+          "missing_fact"
+        ]
+      },
+      {
+        "claim_id": "A01:1237:1439",
+        "gold_claim_id": "A01:1237:1439",
+        "expected_label": "unknown",
+        "predicted_label": "unknown",
+        "correct": true,
+        "difficulty_tags": [
+          "policy_scope"
+        ]
+      },
+      {
+        "claim_id": "A01:1440:1619",
+        "gold_claim_id": "A01:1440:1619",
+        "expected_label": "contradicted",
+        "predicted_label": "contradicted",
+        "correct": true,
+        "difficulty_tags": [
+          "condition_swap"
+        ]
+      },
+      {
+        "claim_id": "A01:1620:1767",
+        "gold_claim_id": "A01:1620:1767",
+        "expected_label": "supported",
+        "predicted_label": "supported",
+        "correct": true,
+        "difficulty_tags": [
+          "date_scope",
+          "price"
+        ]
+      },
+      {
+        "claim_id": "A01:1769:1942",
+        "gold_claim_id": "A01:1769:1942",
+        "expected_label": "contradicted",
+        "predicted_label": "contradicted",
+        "correct": true,
+        "difficulty_tags": [
+          "box_scope"
+        ]
+      },
+      {
+        "claim_id": "A01:1943:2104",
+        "gold_claim_id": "A01:1943:2104",
+        "expected_label": "supported",
+        "predicted_label": "supported",
+        "correct": true,
+        "difficulty_tags": [
+          "explicit_false",
+          "feature_scope"
+        ]
+      },
+      {
+        "claim_id": "A07:306:511",
+        "gold_claim_id": "A07:306:511",
+        "expected_label": "unknown",
+        "predicted_label": "unknown",
+        "correct": true,
+        "difficulty_tags": [
+          "region_scope"
+        ]
+      },
+      {
+        "claim_id": "A07:700:884",
+        "gold_claim_id": "A07:700:884",
+        "expected_label": "contradicted",
+        "predicted_label": "contradicted",
+        "correct": true,
+        "difficulty_tags": [
+          "model_scope"
+        ]
+      },
+      {
+        "claim_id": "A07:987:1153",
+        "gold_claim_id": "A07:987:1153",
+        "expected_label": "supported",
+        "predicted_label": "supported",
+        "correct": true,
+        "difficulty_tags": [
+          "qualification",
+          "unit_conversion"
+        ]
+      },
+      {
+        "claim_id": "A07:1350:1533",
+        "gold_claim_id": "A07:1350:1533",
+        "expected_label": "supported",
+        "predicted_label": "supported",
+        "correct": true,
+        "difficulty_tags": [
+          "unit_conversion",
+          "scope"
+        ]
+      },
+      {
+        "claim_id": "A07:1534:1719",
+        "gold_claim_id": "A07:1534:1719",
+        "expected_label": "supported",
+        "predicted_label": "supported",
+        "correct": true,
+        "difficulty_tags": [
+          "requirement_vs_availability"
+        ]
+      },
+      {
+        "claim_id": "A07:1920:2143",
+        "gold_claim_id": "A07:1920:2143",
+        "expected_label": "contradicted",
+        "predicted_label": "contradicted",
+        "correct": true,
+        "difficulty_tags": [
+          "policy_vs_capability"
+        ]
+      },
+      {
+        "claim_id": "A24:499:683",
+        "gold_claim_id": "A24:499:683",
+        "expected_label": "contradicted",
+        "predicted_label": "contradicted",
+        "correct": true,
+        "difficulty_tags": [
+          "policy_scope"
+        ]
+      },
+      {
+        "claim_id": "A24:685:890",
+        "gold_claim_id": "A24:685:890",
+        "expected_label": "unknown",
+        "predicted_label": "unknown",
+        "correct": true,
+        "difficulty_tags": [
+          "cross_brand_comparison"
+        ]
+      },
+      {
+        "claim_id": "A24:891:1091",
+        "gold_claim_id": "A24:891:1091",
+        "expected_label": "unknown",
+        "predicted_label": "unknown",
+        "correct": true,
+        "difficulty_tags": [
+          "policy_scope"
+        ]
+      },
+      {
+        "claim_id": "A24:1092:1287",
+        "gold_claim_id": "A24:1092:1287",
+        "expected_label": "unknown",
+        "predicted_label": "unknown",
+        "correct": true,
+        "difficulty_tags": [
+          "feature_conflation"
+        ]
+      },
+      {
+        "claim_id": "A24:1484:1675",
+        "gold_claim_id": "A24:1484:1675",
+        "expected_label": "supported",
+        "predicted_label": "supported",
+        "correct": true,
+        "difficulty_tags": [
+          "model_scope",
+          "negation"
+        ]
+      },
+      {
+        "claim_id": "A24:1676:1854",
+        "gold_claim_id": "A24:1676:1854",
+        "expected_label": "contradicted",
+        "predicted_label": "contradicted",
+        "correct": true,
+        "difficulty_tags": [
+          "variant_transfer"
+        ]
+      },
+      {
+        "claim_id": "A24:1856:2025",
+        "gold_claim_id": "A24:1856:2025",
+        "expected_label": "supported",
+        "predicted_label": "supported",
+        "correct": true,
+        "difficulty_tags": [
+          "date_scope",
+          "arithmetic"
+        ]
+      },
+      {
+        "claim_id": "A24:2026:2214",
+        "gold_claim_id": "A24:2026:2214",
+        "expected_label": "supported",
+        "predicted_label": "supported",
+        "correct": true,
+        "difficulty_tags": [
+          "policy_scope",
+          "negation"
+        ]
+      },
+      {
+        "claim_id": "A24:2215:2381",
+        "gold_claim_id": "A24:2215:2381",
+        "expected_label": "supported",
+        "predicted_label": "supported",
+        "correct": true,
+        "difficulty_tags": [
+          "explicit_false",
+          "scope"
+        ]
+      }
+    ],
+    "confusion_matrix_expected_by_predicted": {
+      "supported": {
+        "supported": 9,
+        "contradicted": 1,
+        "unknown": 0
+      },
+      "contradicted": {
+        "supported": 0,
+        "contradicted": 6,
+        "unknown": 1
+      },
+      "unknown": {
+        "supported": 0,
+        "contradicted": 0,
+        "unknown": 7
+      }
+    },
+    "joint_recall_by_expected_label": {
+      "contradicted": {
+        "correct": 6,
+        "gold": 7
+      },
+      "supported": {
+        "correct": 9,
+        "gold": 10
+      },
+      "unknown": {
+        "correct": 7,
+        "gold": 10
+      }
+    },
+    "joint_recall_by_difficulty_tag": {
+      "arithmetic": {
+        "correct": 1,
+        "gold": 2
+      },
+      "box_scope": {
+        "correct": 1,
+        "gold": 1
+      },
+      "comparison": {
+        "correct": 0,
+        "gold": 1
+      },
+      "condition_swap": {
+        "correct": 1,
+        "gold": 1
+      },
+      "cross_brand_comparison": {
+        "correct": 1,
+        "gold": 1
+      },
+      "date_scope": {
+        "correct": 2,
+        "gold": 2
+      },
+      "explicit_false": {
+        "correct": 2,
+        "gold": 2
+      },
+      "feature_conflation": {
+        "correct": 1,
+        "gold": 2
+      },
+      "feature_scope": {
+        "correct": 1,
+        "gold": 1
+      },
+      "inference": {
+        "correct": 0,
+        "gold": 1
+      },
+      "missing_fact": {
+        "correct": 1,
+        "gold": 2
+      },
+      "model_scope": {
+        "correct": 2,
+        "gold": 2
+      },
+      "negation": {
+        "correct": 2,
+        "gold": 2
+      },
+      "policy_scope": {
+        "correct": 5,
+        "gold": 6
+      },
+      "policy_vs_capability": {
+        "correct": 1,
+        "gold": 1
+      },
+      "price": {
+        "correct": 1,
+        "gold": 1
+      },
+      "qualification": {
+        "correct": 1,
+        "gold": 1
+      },
+      "region_scope": {
+        "correct": 1,
+        "gold": 1
+      },
+      "requirement_vs_availability": {
+        "correct": 1,
+        "gold": 1
+      },
+      "scope": {
+        "correct": 2,
+        "gold": 2
+      },
+      "unit_conversion": {
+        "correct": 2,
+        "gold": 2
+      },
+      "variant_transfer": {
+        "correct": 1,
+        "gold": 1
+      }
+    },
+    "per_answer": [
+      {
+        "answer_id": "A01",
+        "status": "ok",
+        "gold": 9,
+        "predicted": 9,
+        "matched": 9,
+        "correct": 7
+      },
+      {
+        "answer_id": "A07",
+        "status": "ok",
+        "gold": 8,
+        "predicted": 6,
+        "matched": 6,
+        "correct": 6
+      },
+      {
+        "answer_id": "A24",
+        "status": "ok",
+        "gold": 10,
+        "predicted": 9,
+        "matched": 9,
+        "correct": 9
+      }
+    ]
+  },
+  "answers": [
+    {
+      "answer_id": "A01",
+      "brand_id": "cleartrail",
+      "status": "ok",
+      "error_type": null,
+      "error_message": null,
+      "latency_ms": 10744,
+      "model_turns": 2,
+      "tool_calls": [
+        {
+          "turn": 1,
+          "name": "get_brand_facts",
+          "brand_id": "cleartrail"
+        }
+      ],
+      "usage": [
+        {
+          "completion_tokens": 22,
+          "prompt_tokens": 1464,
+          "total_tokens": 1486
+        },
+        {
+          "completion_tokens": 526,
+          "prompt_tokens": 5198,
+          "total_tokens": 5724
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "A01:306:460",
+          "start_char": 306,
+          "end_char": 460,
+          "quote": "For the current India catalogue, ClearTrail Mini is listed at INR 1,200 less than ClearTrail Plus, comparing the two tax-inclusive prices before shipping.",
+          "label": "contradicted",
+          "fact_ids": [
+            "cleartrail.mini.price_2026",
+            "cleartrail.plus.price_2026"
+          ],
+          "reason": "The price difference between ClearTrail Mini (INR 1,299) and ClearTrail Plus (INR 2,499) is INR 1,200, but the sentence incorrectly states the Mini is listed at INR 1,200 less than the Plus."
+        },
+        {
+          "claim_id": "A01:461:647",
+          "start_char": 461,
+          "end_char": 647,
+          "quote": "For an authorized India purchase with the original invoice and a manufacturing defect, ClearTrail Mini receives a standard manufacturer warranty lasting 18 months from the purchase date.",
+          "label": "unknown",
+          "fact_ids": [],
+          "reason": "The catalogue does not specify the duration of the manufacturer warranty for the ClearTrail Mini."
+        },
+        {
+          "claim_id": "A01:649:832",
+          "start_char": 649,
+          "end_char": 832,
+          "quote": "An opened ClearTrail Mini can be returned to any authorized India seller within thirty days for a full refund, even when the speaker has no manufacturing defect or functional problem.",
+          "label": "unknown",
+          "fact_ids": [],
+          "reason": "The catalogue does not contain information regarding return policies for opened products."
+        },
+        {
+          "claim_id": "A01:833:1040",
+          "start_char": 833,
+          "end_char": 1040,
+          "quote": "The sustained amplifier output of ClearTrail Mini is forty watts per channel during ordinary playback, which allows a direct loudness comparison with other speakers advertised using electrical power figures.",
+          "label": "unknown",
+          "fact_ids": [],
+          "reason": "The catalogue does not provide information on the sustained amplifier output of the ClearTrail Mini."
+        },
+        {
+          "claim_id": "A01:1237:1439",
+          "start_char": 1237,
+          "end_char": 1439,
+          "quote": "An authorized India service centre guarantees repair of ClearTrail Mini within two working days after receiving the unit and the required purchase paperwork, regardless of replacement-part availability.",
+          "label": "unknown",
+          "fact_ids": [],
+          "reason": "The catalogue does not contain information regarding service centre repair turnaround times."
+        },
+        {
+          "claim_id": "A01:1440:1619",
+          "start_char": 1440,
+          "end_char": 1619,
+          "quote": "The stated laboratory playback time for ClearTrail Mini, using a new battery with EQ off at one hundred percent volume, remains 12 hours without any reduction for louder playback.",
+          "label": "contradicted",
+          "fact_ids": [
+            "cleartrail.mini.battery_100_percent"
+          ],
+          "reason": "The laboratory playback time for ClearTrail Mini at 100% volume is 6 hours, not 12 hours."
+        },
+        {
+          "claim_id": "A01:1620:1767",
+          "start_char": 1620,
+          "end_char": 1767,
+          "quote": "For an India purchase at the official catalogue list price on 1 October 2026, ClearTrail Mini costs INR 1,299 including tax but excluding shipping.",
+          "label": "supported",
+          "fact_ids": [
+            "cleartrail.mini.price_2026"
+          ],
+          "reason": "The price of INR 1,299 for the ClearTrail Mini matches the 2026 catalogue list price."
+        },
+        {
+          "claim_id": "A01:1769:1942",
+          "start_char": 1769,
+          "end_char": 1942,
+          "quote": "The official India retail box for ClearTrail Mini includes a wall charging adapter, even though separate accessory lists may make the charging arrangement look less obvious.",
+          "label": "contradicted",
+          "fact_ids": [
+            "cleartrail.mini.adapter_included"
+          ],
+          "reason": "The official India retail box for the ClearTrail Mini does not include a wall charging adapter."
+        },
+        {
+          "claim_id": "A01:1943:2104",
+          "start_char": 1943,
+          "end_char": 2104,
+          "quote": "The built-in Wi-Fi capability of ClearTrail Mini is absent, which should be treated as a separate specification from its ability to receive audio over Bluetooth.",
+          "label": "supported",
+          "fact_ids": [
+            "cleartrail.mini.wifi"
+          ],
+          "reason": "The catalogue confirms that the ClearTrail Mini does not have built-in Wi-Fi."
+        }
+      ]
+    },
+    {
+      "answer_id": "A07",
+      "brand_id": "cleartrail",
+      "status": "ok",
+      "error_type": null,
+      "error_message": null,
+      "latency_ms": 3567,
+      "model_turns": 2,
+      "tool_calls": [
+        {
+          "turn": 1,
+          "name": "get_brand_facts",
+          "brand_id": "cleartrail"
+        }
+      ],
+      "usage": [
+        {
+          "completion_tokens": 22,
+          "prompt_tokens": 1453,
+          "total_tokens": 1475
+        },
+        {
+          "completion_tokens": 343,
+          "prompt_tokens": 5187,
+          "total_tokens": 5530
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "A07:306:511",
+          "start_char": 306,
+          "end_char": 511,
+          "quote": "A retail purchase of ClearTrail Plus in Germany qualifies for the same 12-month manufacturer warranty described for authorized India purchases, without any different regional terms affecting that duration.",
+          "label": "unknown",
+          "fact_ids": [],
+          "reason": "The catalogue does not provide information about warranty terms for Germany."
+        },
+        {
+          "claim_id": "A07:700:884",
+          "start_char": 700,
+          "end_char": 884,
+          "quote": "The manufacturer supports a stereo pair made from one ClearTrail Plus and one ClearTrail Mini, since being members of the same brand is sufficient for cross-model stereo compatibility.",
+          "label": "contradicted",
+          "fact_ids": [
+            "cleartrail.plus.stereo_pairing_scope",
+            "cleartrail.mini.stereo_pairing_scope"
+          ],
+          "reason": "The catalogue states that stereo pairing is supported only between two units of the same model."
+        },
+        {
+          "claim_id": "A07:987:1153",
+          "start_char": 987,
+          "end_char": 1153,
+          "quote": "With all port covers closed, the laboratory immersion allowance for ClearTrail Plus is limited to fresh water at no more than one metre for no more than half an hour.",
+          "label": "supported",
+          "fact_ids": [
+            "cleartrail.plus.immersion_depth",
+            "cleartrail.plus.immersion_duration"
+          ],
+          "reason": "The catalogue confirms the immersion limits for ClearTrail Plus."
+        },
+        {
+          "claim_id": "A07:1350:1533",
+          "start_char": 1350,
+          "end_char": 1533,
+          "quote": "Considering the speaker alone and leaving retail packaging and accessories out of the measurement, ClearTrail Plus has a stated mass of 0.58 kilograms for carrying-weight comparisons.",
+          "label": "supported",
+          "fact_ids": [
+            "cleartrail.plus.weight"
+          ],
+          "reason": "The catalogue states the weight of ClearTrail Plus is 580 grams, which is 0.58 kilograms."
+        },
+        {
+          "claim_id": "A07:1534:1719",
+          "start_char": 1534,
+          "end_char": 1719,
+          "quote": "Basic Bluetooth listening on ClearTrail Plus does not require the manufacturer companion app to be installed, even if a buyer is interested in optional app-related features or settings.",
+          "label": "supported",
+          "fact_ids": [
+            "cleartrail.plus.app_required_bluetooth"
+          ],
+          "reason": "The catalogue confirms that basic Bluetooth playback does not require the app."
+        },
+        {
+          "claim_id": "A07:1920:2143",
+          "start_char": 1920,
+          "end_char": 2143,
+          "quote": "Water damage to ClearTrail Plus is included in the standard India manufacturer warranty after an authorized purchase, because water resistance should be understood as warranty coverage rather than just a product capability.",
+          "label": "contradicted",
+          "fact_ids": [
+            "cleartrail.plus.water_damage_covered"
+          ],
+          "reason": "The catalogue explicitly states that water damage is not covered by the standard manufacturer warranty."
+        }
+      ]
+    },
+    {
+      "answer_id": "A24",
+      "brand_id": "cloudnote",
+      "status": "ok",
+      "error_type": null,
+      "error_message": null,
+      "latency_ms": 5075,
+      "model_turns": 2,
+      "tool_calls": [
+        {
+          "turn": 1,
+          "name": "get_brand_facts",
+          "brand_id": "cloudnote"
+        }
+      ],
+      "usage": [
+        {
+          "completion_tokens": 21,
+          "prompt_tokens": 1516,
+          "total_tokens": 1537
+        },
+        {
+          "completion_tokens": 507,
+          "prompt_tokens": 5205,
+          "total_tokens": 5712
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "A24:499:683",
+          "start_char": 499,
+          "end_char": 683,
+          "quote": "For an authorized India purchase with the original invoice and a manufacturing defect, CloudNote Air receives a standard manufacturer warranty lasting 30 months from the purchase date.",
+          "label": "contradicted",
+          "fact_ids": [
+            "cloudnote.air.warranty_india"
+          ],
+          "reason": "The standard manufacturer warranty for CloudNote Air in India is 24 months, not 30 months."
+        },
+        {
+          "claim_id": "A24:685:890",
+          "start_char": 685,
+          "end_char": 890,
+          "quote": "Compared with the unlisted RivalSound Trek, CloudNote Air provides two additional hours of playback under identical new-battery, fifty-percent-volume, EQ-off laboratory testing conditions for both devices.",
+          "label": "unknown",
+          "fact_ids": [],
+          "reason": "The catalogue does not contain information about the RivalSound Trek speaker."
+        },
+        {
+          "claim_id": "A24:891:1091",
+          "start_char": 891,
+          "end_char": 1091,
+          "quote": "An authorized India service centre guarantees repair of CloudNote Air within two working days after receiving the unit and the required purchase paperwork, regardless of replacement-part availability.",
+          "label": "unknown",
+          "fact_ids": [],
+          "reason": "The catalogue does not contain information about service centre repair turnaround times."
+        },
+        {
+          "claim_id": "A24:1092:1287",
+          "start_char": 1092,
+          "end_char": 1287,
+          "quote": "CloudNote Air accepts two active Bluetooth source connections at the same time and switches between them automatically, without asking the listener to disconnect one phone before using the other.",
+          "label": "unknown",
+          "fact_ids": [],
+          "reason": "The catalogue does not contain information about Bluetooth multi-point connection capabilities."
+        },
+        {
+          "claim_id": "A24:1484:1675",
+          "start_char": 1484,
+          "end_char": 1675,
+          "quote": "The manufacturer permits stereo pairing only between two units of the exact CloudNote Air model, rather than treating every speaker sharing the same brand name as a compatible stereo partner.",
+          "label": "supported",
+          "fact_ids": [
+            "cloudnote.air.stereo_pairing_scope"
+          ],
+          "reason": "The catalogue confirms stereo pairing is supported only between two units of the same model."
+        },
+        {
+          "claim_id": "A24:1676:1854",
+          "start_char": 1676,
+          "end_char": 1854,
+          "quote": "When measuring just the speaker rather than the retail box and accessories, CloudNote Air weighs 1100 grams, matching the carrying-weight figure associated with CloudNote Studio.",
+          "label": "contradicted",
+          "fact_ids": [
+            "cloudnote.air.weight",
+            "cloudnote.studio.weight"
+          ],
+          "reason": "CloudNote Air weighs 350 grams, not 1100 grams; 1100 grams is the weight of the CloudNote Studio."
+        },
+        {
+          "claim_id": "A24:1856:2025",
+          "start_char": 1856,
+          "end_char": 2025,
+          "quote": "The move from the 2025 India catalogue to the 2026 catalogue raised the tax-inclusive list price of CloudNote Air by INR 300, with shipping excluded in both comparisons.",
+          "label": "supported",
+          "fact_ids": [
+            "cloudnote.air.price_2026",
+            "cloudnote.air.price_2025"
+          ],
+          "reason": "The price increased from 1199 INR in 2025 to 1499 INR in 2026, an increase of 300 INR."
+        },
+        {
+          "claim_id": "A24:2026:2214",
+          "start_char": 2026,
+          "end_char": 2214,
+          "quote": "Even when other warranty conditions are met for an authorized India purchase, the original purchase invoice is still required to claim the standard manufacturer warranty for CloudNote Air.",
+          "label": "supported",
+          "fact_ids": [
+            "cloudnote.air.warranty_invoice_required"
+          ],
+          "reason": "The catalogue confirms the original purchase invoice is required for the standard manufacturer warranty."
+        },
+        {
+          "claim_id": "A24:2215:2381",
+          "start_char": 2215,
+          "end_char": 2381,
+          "quote": "The official India retail box for CloudNote Air does not contain a wall charging adapter, so the box contents should not be inferred just from the charging-port type.",
+          "label": "supported",
+          "fact_ids": [
+            "cloudnote.air.adapter_included"
+          ],
+          "reason": "The catalogue confirms the official India retail box does not include a wall charging adapter."
+        }
+      ]
+    }
+  ]
+}

@@ -8,13 +8,37 @@ baseline (v1) and a candidate (v2), a thin FastAPI service and PostgreSQL storag
 
 | | value |
 |---|---|
-| Provider / model | Google Gemini via its OpenAI-compatible tool-calling API, `gemini-3.8-flash`, temperature 0 |
+| Provider / model | Google Gemini via its OpenAI-compatible tool-calling API, `gemini-3.1-flash-lite`, temperature 0 |
 | Provider request timeout | **120 s** per request (`PROVIDER_TIMEOUT_SECONDS`); timeouts are never retried |
 | Turn limit | 3 model turns per answer (turn 1 must call the tool, turn 3 must answer) |
 | Dataset / facts / evaluator | `long-brand-answers-50-v4` / `speaker-catalogue-v4` / `sentence-spans-and-labels-v4` |
 | Execution | sequential |
 
-> **Status:** live runs in progress; results, the v1→v2 analysis and test output are added to this README and `artifacts/` as each run completes.
+## Results (live runs, Gemini `gemini-3.1-flash-lite`)
+
+| run | answers | answer errors | G | P | M | C | extraction F1 | **joint F1** | joint P / R |
+|---|---|---|---|---|---|---|---|---|---|
+| **v1 development** | 40 | 0 | 376 | 281 | 281 | 269 | 0.8554 | **0.8189** | 0.9573 / 0.7154 |
+| **v2 development** | 40 | 0 | 376 | 371 | 370 | 361 | 0.9906 | **0.9665** | 0.9730 / 0.9601 |
+| v1 check (A41–A50) | 10 | 0 | null | 75 | null | null | null | null | null |
+| v2 check (A41–A50) | 10 | 0 | null | 87 | null | null | null | null | null |
+
+* **The targeted change (v2) raised joint F1 from 0.819 to 0.967** on identical inputs, model, settings and
+  scoring. It fixed 96 gold claims and caused 4 regressions. Details: [`artifacts/error_analysis.md`](artifacts/error_analysis.md)
+  and [`artifacts/comparison_development.md`](artifacts/comparison_development.md).
+* Check-run quality is `null` by design; the reviewers hold the labels. Both versions were frozen in commit
+  `760220b` before the check runs.
+* Each report contains predictions (span, quote, label, fact_ids, reason), answer outcomes, development
+  missed/extra/wrong-label records, a confusion matrix, metrics, settings, versions and file hashes:
+  [`v1_development`](artifacts/runs/v1_development/report.md), [`v2_development`](artifacts/runs/v2_development/report.md),
+  [`v1_check`](artifacts/runs/v1_check/report.md) and [`v2_check`](artifacts/runs/v2_check/report.md). Each has a
+  `report.json` and per-answer sanitized model/tool exchanges in `exchanges/`; for example,
+  [`v2_development/exchanges/A07.json`](artifacts/runs/v2_development/exchanges/A07.json) shows the system prompt,
+  the numbered sentences, the model's `get_brand_facts` tool call, the tool result and the final JSON.
+* Live API evidence (a real `/classify` call, a joined `GET /evaluation-runs/{id}` from PostgreSQL, and
+  404/422 cases): [`artifacts/api_live/`](artifacts/api_live/).
+* Tests: **89 passed** ([`artifacts/test_output.txt`](artifacts/test_output.txt)).
+
 
 ---
 
@@ -169,9 +193,48 @@ keys, and CHECK constraints on labels, splits, statuses and spans. All SQL is pa
 
 
 
+## 6. Improvement: diagnosis, change, effect
+
+**Diagnosis (v1 development).** v1 had perfect extraction precision (1.000) but recall of only 0.747:
+it missed 95 gold sentences, and **91 of them have the gold label `unknown`**. Joint recall for `unknown`
+claims was 44/136, against 115/120 for supported and 110/120 for contradicted. The model skipped product
+assertions that have no catalogue row: free delivery, 30-day returns, 2-day repairs, AAC codec,
+multipoint, 100 m range, recycled plastic, manufacturing origin, 2027 prices, firmware plans,
+cold-weather runtime and charging time. It treated "the catalogue can't verify this" as "this is not a
+claim". The spec says to extract claims "including false or unsupported assertions".
+
+**One targeted change (v2).** Only Step 2 of the system prompt changed: decide whether a sentence is a
+claim from its wording, before checking the facts. A product assertion the catalogue can't confirm or
+refute is still a claim and is labelled `unknown`. The labelling rules, code, tool, provider, model and
+settings are identical (`diff claimcheck/prompts/v1.md claimcheck/prompts/v2.md`).
+
+**Effect.** Extraction recall rose from 0.747 to 0.984 and joint F1 from **0.819 to 0.967**. Unknown
+recall went from 44/136 to 131/136. 96 gold claims were fixed.
+
+**Regressions, reported honestly.** 4 gold claims were correct in v1 and wrong in v2: two price-difference
+directions (A17, A35), one historical-price claim (A20) and one missed supported sentence (A39). There is
+also 1 new extra prediction: an advice sentence in A32 selected as `unknown`. The remaining v2 errors are 9
+wrong labels (5 price-difference direction, 2 minute conversions, 2 historical "same price" claims) and 6
+missed sentences. The next change I'd make, not done here because it's one change per iteration, is to
+compute price differences and unit conversions in Python, for example with a read-only arithmetic tool.
+
+## 7. Model choice and preliminary runs (disclosed)
+
+* The first model was `gemini-3.8-flash`. It scored 27/27 on a 3-answer smoke test, but the **free tier
+  allows only 20 requests per day for that model**. The first official v1 attempt hit HTTP 429 from
+  A07 onward, so I stopped it; it is stored in PostgreSQL as run `1e5adbce...` with status `failed`.
+  Spacing out requests doesn't help, because the limit is per day.
+* `gemma-4-31b-it` and `gemma-4-26b-a4b-it` support tool calling but were too slow on the free tier
+  (130–260 s per answer, and 120 s timeouts). The Gemma smoke test also showed inline `<thought>...</thought>`
+  blocks and fenced JSON. I changed the final-output parser to drop reasoning blocks and read the last
+  fenced JSON block; nothing else is repaired, and the result must still pass full validation. This
+  change was made **before** the official v1 run, so it applies equally to v1 and v2.
+* All four official runs use `gemini-3.1-flash-lite`, the fastest free model that worked (3–25 s per
+  answer). The smoke reports are in [`artifacts/preliminary/`](artifacts/preliminary/).
+
 ## 8. Tests
 
-`python -m pytest -v` was **actually run**: see `artifacts/test_output.txt`. The full output is in
+`python -m pytest -v` was **actually run**: **89 passed** in about 4 s. The full output is in
 [`artifacts/test_output.txt`](artifacts/test_output.txt). The API and database tests ran against the
 real PostgreSQL 16 container, not mocks.
 
@@ -201,6 +264,47 @@ The fake providers only exercise control flow; all quality numbers come from the
 
 
 
+## 10. Limitations and unfinished work
+
+* **Model strength.** Free-tier quotas forced a flash-lite model, and most remaining errors are
+  arithmetic (price-difference direction, minute conversions). The planned arithmetic helper (section 6)
+  is not implemented.
+* **Determinism.** Gemini isn't fully deterministic at temperature 0. A rerun can change a few labels;
+  three of the four v2 regressions are this kind of borderline arithmetic judgement. I made only one run
+  per version and didn't average repeated runs.
+* **Check split.** The A41–A50 inputs are visible in `answers.csv`, so this isn't a fully blind
+  benchmark. No prompt or code was tuned on them, and their quality is unknown to me.
+* **Sentence segmentation** relies on `.`, `!` or `?` followed by whitespace. It matches all 376 gold spans
+  here, but abbreviations like "e.g. " would split a sentence in other data.
+* **Deferred by design:** no concurrency, no Langfuse, no React, no authentication, no idempotency or
+  durable recovery. `POST /evaluation-runs` runs synchronously, so a development run holds the request
+  for a few minutes.
+* The live API evidence covers `/classify` and `GET /evaluation-runs/{id}`. The four official runs were
+  executed through the CLI, which calls the same `execute_run` service function as
+  `POST /evaluation-runs`. That endpoint itself is exercised in the tests against real PostgreSQL with a
+  fake provider.
+
+## 11. Time spent
+
+About 2 hours of build time (15:45–17:50 IST on 19 October 2026). That covers the agent, harness, API,
+DB and tests, then about 25 minutes of live runs, analysis and documentation. The 5 PM submission came
+while the live runs were blocked by the free-tier quota; the runs, analysis and test output were
+committed afterwards (see the git history timestamps).
+
 ## 12. AI assistance disclosure
 
-Built with help from Claude Code (Anthropic), which the assessment allows. The full disclosure of what it did and what I verified is added with the final results.
+I built this with **Claude Code** (Anthropic's coding agent), which the assessment allows. I directed the
+work and made the decisions: the provider (Gemini with my own key), switching models when the free
+quota ran out, and keeping exactly one change between v1 and v2. Claude Code wrote most of the code,
+tests, prompts and documentation. It is **not** listed as a commit author or co-author.
+
+These checks were actually executed, and their outputs are committed:
+
+* all 376 gold quotes equal `ai_answer[start:end]`, and every gold span is a segmenter sentence (`verify-data`, tests);
+* the issued CSVs are byte-identical to the files I received (SHA-256 in `data/SHA256SUMS`);
+* 89 tests passed, including API and DB tests against the real PostgreSQL container (`artifacts/test_output.txt`);
+* four live runs with real tool calls, inspected through the saved exchanges (no API key appears in any artifact);
+* `rescore` recomputes the saved v2 development metrics exactly from the saved predictions;
+* live `/classify` and `GET /evaluation-runs/{id}` calls (`artifacts/api_live/`);
+* the v1→v2 change was diagnosed from the v1 development report only, and both versions were frozen before the check runs.
+

@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/evaluation-runs/not-a-uuid",
+    "json": null
+  },
+  "status_code": 422,
+  "response": {
+    "error": {
+      "type": "validation_error",
+      "message": "request validation failed",
+      "fields": [
+        "path.run_id"
+      ]
+    }
+  }
+}

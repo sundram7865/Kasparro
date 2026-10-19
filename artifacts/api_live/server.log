@@ -1,0 +1,12 @@
+INFO:     Started server process [17604]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8077 (Press CTRL+C to quit)
+INFO:     127.0.0.1:63473 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63477 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64193 - "POST /classify HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64196 - "POST /classify HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:64198 - "POST /classify HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64200 - "GET /evaluation-runs/7eeefac5-6112-4e7b-99fb-a5e1a616e9b8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64203 - "GET /evaluation-runs/00000000-0000-0000-0000-000000000000 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64206 - "GET /evaluation-runs/not-a-uuid HTTP/1.1" 422 Unprocessable Entity

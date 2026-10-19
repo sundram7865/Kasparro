@@ -1,0 +1,31 @@
+run v2/check provider=gemini model=gemini-3.1-flash-lite -> D:\Kasparro\artifacts\runs\v2_check
+[1/10] A41: 9 claims (3981 ms)
+[2/10] A42: 10 claims (24327 ms)
+[3/10] A43: 9 claims (3979 ms)
+[4/10] A44: 10 claims (5554 ms)
+[5/10] A45: 9 claims (10169 ms)
+[6/10] A46: 11 claims (4035 ms)
+[7/10] A47: 8 claims (24021 ms)
+[8/10] A48: 6 claims (18813 ms)
+[9/10] A49: 5 claims (4072 ms)
+[10/10] A50: 10 claims (4165 ms)
+{
+  "run_id": "fcc18201-5b9a-463a-8d29-07ed4bce164b",
+  "counts": {
+    "scheduled_answers": 10,
+    "ok_answers": 10,
+    "error_answers": 0,
+    "empty_answers": 0,
+    "P": 87,
+    "predicted_label_counts": {
+      "unknown": 27,
+      "contradicted": 29,
+      "supported": 31
+    },
+    "G": null,
+    "M": null,
+    "C": null
+  },
+  "metrics": null
+}
+exit=0
