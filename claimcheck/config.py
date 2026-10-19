@@ -31,7 +31,7 @@ PROVIDERS: dict[str, dict[str, str | None]] = {
     "gemini": {
         "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
         "key_env": "GEMINI_API_KEY",
-        "default_model": "gemini-2.5-flash",
+        "default_model": "gemini-3.1-flash-lite",
     },
     "openai": {"base_url": None, "key_env": "OPENAI_API_KEY", "default_model": "gpt-4.1-mini"},
     "groq": {

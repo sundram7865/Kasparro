@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+import re
 import json
 import time
 from dataclasses import dataclass, field
@@ -72,8 +73,21 @@ class AgentResult:
     trace_ref: str | None = None
 
 
+_THOUGHT_BLOCK = re.compile(r"<thought>.*?</thought>", re.S | re.I)
+_FENCED_BLOCK = re.compile(r"```(?:json)?\s*\n(.*?)```", re.S)
+
+
 def _strip_fence(text: str) -> str:
-    stripped = text.strip()
+    """Extract the JSON payload from the final message.
+
+    Some models (e.g. Gemma) emit an inline <thought>...</thought> reasoning block and wrap
+    the JSON in a code fence. Reasoning blocks are removed; the last fenced block is used if
+    present. Nothing is repaired: the result must still parse as JSON and pass validation.
+    """
+    stripped = _THOUGHT_BLOCK.sub("", text).strip()
+    fenced = _FENCED_BLOCK.findall(stripped)
+    if fenced:
+        return fenced[-1].strip()
     if stripped.startswith("```"):
         stripped = stripped.split("\n", 1)[1] if "\n" in stripped else ""
         if stripped.rstrip().endswith("```"):
