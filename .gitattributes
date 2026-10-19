@@ -1,0 +1,4 @@
+data/*.csv -text
+*.py text eol=lf
+*.md text eol=lf
+*.sql text eol=lf
