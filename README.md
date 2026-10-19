@@ -38,6 +38,7 @@ baseline (v1) and a candidate (v2), a thin FastAPI service and PostgreSQL storag
 * Live API evidence (a real `/classify` call, a joined `GET /evaluation-runs/{id}` from PostgreSQL, and
   404/422 cases): [`artifacts/api_live/`](artifacts/api_live/).
 * Tests: **89 passed** ([`artifacts/test_output.txt`](artifacts/test_output.txt)).
+* PostgreSQL persistence evidence: every stored run (the four official runs plus the aborted first attempt), exported through the same joined query as `GET /evaluation-runs/{id}`: [`artifacts/db_export/`](artifacts/db_export/). Stored claim counts match the reports (281 / 371 / 75 / 87).
 
 
 ---
@@ -222,7 +223,7 @@ compute price differences and unit conversions in Python, for example with a rea
 
 * The first model was `gemini-3.8-flash`. It scored 27/27 on a 3-answer smoke test, but the **free tier
   allows only 20 requests per day for that model**. The first official v1 attempt hit HTTP 429 from
-  A07 onward, so I stopped it; it is stored in PostgreSQL as run `1e5adbce...` with status `failed`.
+  A07 onward, so I stopped it; it is stored in PostgreSQL as run `1e5adbce...` with status `failed` (exported to [`artifacts/db_export/`](artifacts/db_export/)).
   Spacing out requests doesn't help, because the limit is per day.
 * `gemma-4-31b-it` and `gemma-4-26b-a4b-it` support tool calling but were too slow on the free tier
   (130–260 s per answer, and 120 s timeouts). The Gemma smoke test also showed inline `<thought>...</thought>`

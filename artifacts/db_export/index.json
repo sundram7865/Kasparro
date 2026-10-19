@@ -1,0 +1,52 @@
+[
+  {
+    "file": "v1_development_gemini-3.8-flash_failed_1e5adbce.json",
+    "run_id": "1e5adbce-f1a9-4435-9eed-ad34cc24a4c4",
+    "status": "failed",
+    "model": "gemini-3.8-flash",
+    "answers_stored": 12,
+    "claims_stored": 57,
+    "error_answers": 6,
+    "error": "aborted by operator: Gemini free-tier daily quota exhausted (HTTP 429) from A07 onward"
+  },
+  {
+    "file": "v1_development_gemini-3.1-flash-lite_completed_bdf2b222.json",
+    "run_id": "bdf2b222-5410-4fc9-af3c-2ad859c31ba3",
+    "status": "completed",
+    "model": "gemini-3.1-flash-lite",
+    "answers_stored": 40,
+    "claims_stored": 281,
+    "error_answers": 0,
+    "error": null
+  },
+  {
+    "file": "v2_development_gemini-3.1-flash-lite_completed_7eeefac5.json",
+    "run_id": "7eeefac5-6112-4e7b-99fb-a5e1a616e9b8",
+    "status": "completed",
+    "model": "gemini-3.1-flash-lite",
+    "answers_stored": 40,
+    "claims_stored": 371,
+    "error_answers": 0,
+    "error": null
+  },
+  {
+    "file": "v1_check_gemini-3.1-flash-lite_completed_6ff1d6a3.json",
+    "run_id": "6ff1d6a3-f9b7-4b7a-b1d4-bbac91145aa7",
+    "status": "completed",
+    "model": "gemini-3.1-flash-lite",
+    "answers_stored": 10,
+    "claims_stored": 75,
+    "error_answers": 0,
+    "error": null
+  },
+  {
+    "file": "v2_check_gemini-3.1-flash-lite_completed_fcc18201.json",
+    "run_id": "fcc18201-5b9a-463a-8d29-07ed4bce164b",
+    "status": "completed",
+    "model": "gemini-3.1-flash-lite",
+    "answers_stored": 10,
+    "claims_stored": 87,
+    "error_answers": 0,
+    "error": null
+  }
+]
