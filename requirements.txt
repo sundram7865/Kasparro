@@ -1,0 +1,10 @@
+# Runtime (pinned; tested with Python 3.12.6 on Windows 11)
+fastapi==0.115.12
+uvicorn==0.34.2
+pydantic==2.11.4
+psycopg[binary]==3.2.9
+openai==1.82.0
+python-dotenv==1.1.0
+httpx==0.28.1
+# Tests
+pytest==8.3.5

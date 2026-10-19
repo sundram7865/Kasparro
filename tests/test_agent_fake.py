@@ -165,7 +165,8 @@ def test_gold_never_enters_model_or_tool_payloads(answers, catalogue, gold):
         assert _run(inp, provider, catalogue, "v1").status == "ok"
         assert _run(inp, provider, catalogue, "v2").status == "ok"
     payloads = json.dumps([r["messages"] for r in provider.requests] + [r["tools"] for r in provider.requests])
-    for marker in ("expected_label", "evidence_fact_ids", "difficulty_tags", "explanation"):
+    # gold-only column names (the answers themselves legitimately use words like "explanation")
+    for marker in ("expected_label", "evidence_fact_ids", "difficulty_tags", "claim_id"):
         assert marker not in payloads
     for g in gold:
         assert g.claim_id not in payloads
